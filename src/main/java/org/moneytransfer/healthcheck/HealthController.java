@@ -1,20 +1,14 @@
-package org.miniportfolio;
+package org.moneytransfer.controllers;
 
 import com.google.gson.Gson;
-import org.miniportfolio.config.Database;
+import org.moneytransfer.config.Database;
 
-import javax.xml.crypto.Data;
-import java.sql.SQLException;
 import java.util.HashMap;
 
-import static spark.Spark.*;
+import static spark.Spark.get;
 
-public class App {
-    public static void main(String[] args) {
-        port(Integer.parseInt(System.getenv().getOrDefault("PORT", "4567")));
-
-        Database.init();
-
+public class HealthController {
+    public HealthController() {
         Gson gson = new Gson();
         get("/health", (req, res) -> {
             res.type("application/json");
