@@ -67,7 +67,6 @@ jooq {
                         directory = "build/generated-src/jooq/main"
                     }
                 }
-
             }
         }
 
