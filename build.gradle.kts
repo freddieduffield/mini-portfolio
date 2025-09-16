@@ -1,5 +1,9 @@
+
 plugins {
-    id("java")
+    java
+    application
+    id("org.flywaydb.flyway") version "9.22.0"
+    id("nu.studer.jooq") version "8.0"
 }
 
 group = "org.miniportfolio"
@@ -19,4 +23,12 @@ dependencies {
     implementation("io.lettuce:lettuce-core:6.2.0.RELEASE")
     testImplementation("org.spockframework:spock-core:2.3-groovy-3.0")
     testImplementation("org.testcontainers:postgresql:1.19.0")
+}
+
+flyway {
+    url = "jdbc:postgresql://localhost:5432/postgres"
+    user = "postgres"
+    password = "pass"
+    locations = arrayOf("filesystem:src/main/resources/db/migration")
+    baselineOnMigrate = true
 }
