@@ -1,4 +1,6 @@
 package org.moneytransfer.transfer.valueobjects;
 
-public record T() {
+import java.util.UUID;
+
+public record TransferId(UUID value) {
 }

@@ -1,4 +1,4 @@
-package org.moneytransfer.controllers;
+package org.moneytransfer.api;
 
 import com.google.gson.Gson;
 import org.moneytransfer.config.Database;
